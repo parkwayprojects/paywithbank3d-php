@@ -15,27 +15,4 @@ class PayWithBank3DTest extends TestCase
         $this->assertTrue(true);
     }
 
-    /** @test */
-    public function inValidKeys(){
-        $this->expectException(Exceptions::class);
-        new PayWithBank3D('staging', '', '');
-    }
-
-    public function testConstructorCallsInternalMethods()
-    {
-
-        $mock = $this->getMockBuilder(PayWithBank3D::class)
-            ->setConstructorArgs(['staging', 'test@payzone', 'PayzoneAPP'])
-            ->setMethods(array('prepareRequest'))
-            ->getMock();
-
-        $mock->expects($this->once())
-            ->method('prepareRequest');
-
-        $this->expectOutputString('YOU SHALL NOT PASS');
-
-        $mock->addBody('hi', 'me');
-    }
-
-
 }
