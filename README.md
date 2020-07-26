@@ -32,7 +32,7 @@ initialize a transaction
             ->addBody('customer', [
                 'name' => 'Edward Paul',
                 'email' => 'infinitypaul@live.com',
-                'phone' => '08170574789'
+                'phone' => '0848494839'
             ])
             ->addBody('returnUrl', route('verify'))
             ->addBody('color', '#FF0000')
