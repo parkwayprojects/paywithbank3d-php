@@ -1,8 +1,6 @@
 <?php
 
-
 namespace ParkwayProjects\PayWithBank3D;
-
 
 class Response
 {
@@ -45,7 +43,8 @@ class Response
         return $this->body;
     }
 
-    public function getHeader(){
+    public function getHeader()
+    {
         return $this->headers;
     }
 

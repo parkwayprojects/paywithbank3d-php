@@ -2,16 +2,13 @@
 
 namespace ParkwayProjects\PayWithBank3D;
 
-use Exception;
-use GuzzleHttp\Client;
 use ParkwayProjects\PayWithBank3D\Exceptions\Exceptions;
-
 
 class PayWithBank3D
 {
     public static $baseUrl = [
         'staging' => 'https://staging.paywithbank3d.com/api/',
-        'live' => 'https://paywithbank3d.com/api/'
+        'live' => 'https://paywithbank3d.com/api/',
     ];
 
     public static $mode;
@@ -22,9 +19,8 @@ class PayWithBank3D
 
     public static $publicKey;
 
-
-
-    public static function setup($secretKey, $publicKey, $mode='live'){
+    public static function setup($secretKey, $publicKey, $mode = 'live')
+    {
         if (empty($secretKey) || empty($publicKey)) {
             throw Exceptions::create('format.is_null');
         }
@@ -36,5 +32,4 @@ class PayWithBank3D
         self::$publicKey = $publicKey;
         self::$mode = $mode;
     }
-
 }
