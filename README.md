@@ -34,7 +34,7 @@ initialize a transaction
                 'email' => 'infinitypaul@live.com',
                 'phone' => '0848494839'
             ])
-            ->addBody('returnUrl', route('verify'))
+            ->addBody('returnUrl', 'https://infinitypaul.com')
             ->addBody('color', '#FF0000')
             ->addBody('metadata', [
                 'orderId'=> '1234'
@@ -60,6 +60,7 @@ This return the status of the payment you just made and some other values of the
 | metadata | False |    This is an object that allows you to add additional detail(s) to your request |
 | phone | False |    Phone number of customer |
 | reference | False |    Your unique transaction reference. |
+| returnUrl | True |    Url Redirected To After A Successful Payment. |
 
 ### Testing
 
