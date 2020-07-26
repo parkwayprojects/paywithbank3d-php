@@ -19,34 +19,33 @@ composer require parkwayprojects/paywithbank3d-php
 First you initialize the library with your  public key, secret key and option(live or staging)
 
 ``` php
-$bank3d = (new PayWithBank3D('Secret Key', 'Public Key', 'Options'))
+$bank3d = \ParkwayProjects\PayWithBank3D\PayWithBank3D::setup('test@payzone', 'PayzoneAPP', 'staging');
 ```
 
 ## Transaction
 initialize a transaction
 
 ```php
-$bank3d->addBody('reference', time())
-                   ->addBody('amount', '100000')
-                   ->addBody('currencyCode', 'NGN')
-                   ->addBody('customer', [
-                       'name' => 'Edward Paul',
-                       'email' => 'infinitypaul@live.com',
-                       'phone' => '070064566'
-                   ])
-                   ->addBody('returnUrl', 'https://infinitypaul.com')
-                   ->addBody('color', '#FF0000')
-                   ->addBody('metadata', [
-                       'orderId'=> '1234'
-                   ]);
-$bank3d->getAuthorizationUrl()->redirectNow();
+\ParkwayProjects\PayWithBank3D\Transaction::addBody('reference', time())
+            ->addBody('amount', '100000')
+            ->addBody('currencyCode', 'NGN')
+            ->addBody('customer', [
+                'name' => 'Edward Paul',
+                'email' => 'infinitypaul@live.com',
+                'phone' => '08170574789'
+            ])
+            ->addBody('returnUrl', route('verify'))
+            ->addBody('color', '#FF0000')
+            ->addBody('metadata', [
+                'orderId'=> '1234'
+            ])->getAuthorizationUrl()->redirectNow();
 ```
 This will automatically take you to secure payment page on PayWithBank3D, Once payment is completed, you are redirected to the url you specify in the returnURL
 
 ## Verify Transaction
 
 ```php
-$bank3d->verify();
+\ParkwayProjects\PayWithBank3D\Transaction::verify();
 ```
 This return the status of the payment you just made and some other values of the transaction
 
