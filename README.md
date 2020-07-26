@@ -49,6 +49,18 @@ This will automatically take you to secure payment page on PayWithBank3D, Once p
 ```
 This return the status of the payment you just made and some other values of the transaction
 
+## Configuration Parameters
+
+| Parameter   |      Required      |  Description |
+|----------|:-------------:|------:|
+| amount |  True | Amount to be charged in kobo. |
+| color |    False   |   You get to choose a theme color for the payment modal that reflects your brand |
+| customer | True |    This is an object that contains customer details |
+| email | False |    Customer email address |
+| metadata | False |    This is an object that allows you to add additional detail(s) to your request |
+| phone | False |    Phone number of customer |
+| reference | False |    Your unique transaction reference. |
+
 ### Testing
 
 ``` bash
