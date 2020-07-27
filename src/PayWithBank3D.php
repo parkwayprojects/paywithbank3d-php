@@ -19,7 +19,7 @@ class PayWithBank3D
 
     public static $publicKey;
 
-    public static function setup($secretKey, $publicKey, $mode = 'live')
+    public static function setup($publicKey, $secretKey, $mode = 'live')
     {
         if (empty($secretKey) || empty($publicKey)) {
             throw Exceptions::create('format.is_null');

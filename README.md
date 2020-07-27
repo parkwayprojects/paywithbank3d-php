@@ -19,7 +19,7 @@ composer require parkwayprojects/paywithbank3d-php
 First you initialize the library with your  public key, secret key and option(live or staging)
 
 ``` php
-$bank3d = \ParkwayProjects\PayWithBank3D\PayWithBank3D::setup('test@payzone', 'PayzoneAPP', 'staging');
+$bank3d = \ParkwayProjects\PayWithBank3D\PayWithBank3D::setup('Public Key', 'Secret Key', 'staging');
 ```
 
 ## Transaction
